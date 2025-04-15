@@ -9,8 +9,13 @@ main {
 }
 header {
     background-image:url(./imagenes/banner2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-color: #c00;
-    
+    will-change: background-image;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 h2 {
     color: #c00;
