@@ -6,6 +6,48 @@
         <link rel="stylesheet" href="./styles.css">
         <title>Asados - Mi tierra</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .detalles-btn {
+                background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+                border: none;
+                color: #000;
+                font-weight: 600;
+                padding: 6px 14px;
+                border-radius: 20px;
+                box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-size: 0.85rem;
+            }
+            .detalles-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+                background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            }
+            .detalles-btn:active {
+                transform: translateY(0);
+            }
+            .detalles-content {
+                display: none;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                animation: fadeIn 0.3s ease;
+            }
+            .detalles-content.show {
+                display: block;
+            }
+            .detalles-content h6 {
+                color: #FFD700 !important;
+                font-weight: 500;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
     </head>
     <body class="color-category">
         <header class="bg-danger text-white text-center py-4">
@@ -20,10 +62,17 @@
                 <div class="row">
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="asado de res o cerdo" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🥩</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Asada de res o cerdo $33,000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     </div>
                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20carne%20asada%20de..." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -31,10 +80,17 @@
 
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="bistec de res o cerdo" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🥩</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Bistec de res o cerdo $35,000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     </div>
                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20bistec%20de..." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -45,7 +101,12 @@
                      <img src="./imagenes/Platos/puntaDeAnca.jpeg" alt="punta de anca" class="card-img-top menu-img">
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Punta de anca asada $40.000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     </div>
                        <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20punta%20de%20anca%20asada." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -53,10 +114,17 @@
 
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="punta de anca gratinada" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🥩</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Punta de anca gratinada $43,000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                     </div>
                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20punta%20de%20anca%20gratinada." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -67,7 +135,12 @@
                          <img src="./imagenes/Platos/churrasquito.jpeg" alt="Churrasquito" class="card-img-top menu-img">
                         <div class="card-body">
                          <h5 class="card-title text-center text-light">Churrasquito $36.000</h5>
-                         <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                         <div class="text-center mb-2">
+                            <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                         </div>
+                         <div class="detalles-content">
+                            <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                         </div>
                          <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20churrasquito." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                         </div>
                         </div>
@@ -78,7 +151,12 @@
                              <img src="./imagenes/Platos/canon-de-cerdo.jpeg" alt="Cañon de cerdo gratinado" class="card-img-top menu-img">
                             <div class="card-body">
                              <h5 class="card-title text-center text-light">Cañon de cerdo $36,000</h5>
-                             <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                             <div class="text-center mb-2">
+                                <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                             </div>
+                             <div class="detalles-content">
+                                <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                             </div>
                              <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20cañon%20de%20cerdo." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                             </div>
                             </div>
@@ -89,7 +167,12 @@
                                  <img src="./imagenes/Platos/canon-de-cerdo-gratinado.jpeg" alt="Cañon de cerdo gratinado" class="card-img-top menu-img">
                                 <div class="card-body">
                                  <h5 class="card-title text-center text-light">Cañon de cerdo gratinado $36,000</h5>
-                                 <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                 <div class="text-center mb-2">
+                                    <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                 </div>
+                                 <div class="detalles-content">
+                                    <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                 </div>
                                  <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20cañon%20de%20cerdo%20gratinado." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                 </div>
                                 </div>
@@ -100,7 +183,12 @@
                                  <img src="./imagenes/Platos/canon-de-cerdo-hawaiano.jpeg" alt="Cañon de cerdo hawaiano" class="card-img-top menu-img">
                                 <div class="card-body">
                                  <h5 class="card-title text-center text-light">Cañon de cerdo hawaiano $40,000</h5>
-                                 <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                 <div class="text-center mb-2">
+                                    <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                 </div>
+                                 <div class="detalles-content">
+                                    <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                 </div>
                                  <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20cañon%20de%20cerdo%20hawaiano." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                 </div>
                                 </div>
@@ -111,7 +199,12 @@
                                      <img src="./imagenes/Platos/sobrebarriga-asada.jpeg" alt="Sobrebarriga asada" class="card-img-top menu-img">
                                     <div class="card-body">
                                      <h5 class="card-title text-center text-light">Sobrebarriga asada $33,000</h5>
-                                     <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                     <div class="text-center mb-2">
+                                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                     </div>
+                                     <div class="detalles-content">
+                                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                     </div>
                                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20sobrebarriga%20asada." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                     </div>
                                     </div>
@@ -122,7 +215,12 @@
                                         <img src="./imagenes/Platos/sobrebarriga-bistec.jpeg" alt="Sobrebarriga en bistec" class="card-img-top menu-img">
                                         <div class="card-body">
                                         <h5 class="card-title text-center text-light">Sobrebarriga en bistec $35,000</h5>
-                                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                        <div class="text-center mb-2">
+                                            <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                        </div>
+                                        <div class="detalles-content">
+                                            <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                        </div>
                                         <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20sobrebarriga%20en%20bistec." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                         </div>
                                         </div>
@@ -134,7 +232,12 @@
                                         <img src="./imagenes/Platos/costilla-BBQ.jpeg" alt="Costilla BBQ" class="card-img-top menu-img">
                                         <div class="card-body">
                                         <h5 class="card-title text-center text-light">Costilla BBQ $35,000</h5>
-                                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                        <div class="text-center mb-2">
+                                            <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                        </div>
+                                        <div class="detalles-content">
+                                            <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                        </div>
                                         <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20costilla%20BBQ." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                         </div>
                                         </div>
@@ -145,7 +248,12 @@
                                         <img src="./imagenes/Platos/churro-de-mi-tierra.jpeg" alt="Churro de mi tierra" class="card-img-top menu-img">
                                         <div class="card-body">
                                         <h5 class="card-title text-center text-light">Churro de mi tierra $40,000</h5>
-                                        <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                        <div class="text-center mb-2">
+                                            <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                        </div>
+                                        <div class="detalles-content">
+                                            <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                        </div>
                                         <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20churro%20de%20mi%20tierra." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                         </div>
                                         </div>
@@ -156,7 +264,12 @@
                                             <img src="./imagenes/Platos/plancha-mixta.jpeg" alt="Planchita mixta" class="card-img-top menu-img">
                                             <div class="card-body">
                                             <h5 class="card-title text-center text-light">Planchita mixta $40,000</h5>
-                                            <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                            <div class="text-center mb-2">
+                                                <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                            </div>
+                                            <div class="detalles-content">
+                                                <h6 class="card-title text-center text-light">Acompañado con papas a la francesa o patacón y ensalada</h6>
+                                            </div>
                                             <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20una%20planchita%20mixta." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                             </div>
                                             </div>
@@ -169,5 +282,25 @@
             <br>Emil Jiménez - Desarrollador web 
             </p>
         </footer>
+        <script>
+            function toggleDetalles(button) {
+                const buttonContainer = button.parentElement;
+                const detallesContent = buttonContainer.nextElementSibling;
+                
+                if (!detallesContent || !detallesContent.classList.contains('detalles-content')) {
+                    return;
+                }
+                
+                const isVisible = detallesContent.classList.contains('show');
+                
+                if (isVisible) {
+                    detallesContent.classList.remove('show');
+                    button.textContent = 'Ver Detalles';
+                } else {
+                    detallesContent.classList.add('show');
+                    button.textContent = 'Ocultar Detalles';
+                }
+            }
+        </script>
     </body>
 </html>

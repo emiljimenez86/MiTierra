@@ -6,6 +6,48 @@
         <link rel="stylesheet" href="./styles.css">
         <title>Desayunos - Mi tierra</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .detalles-btn {
+                background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+                border: none;
+                color: #000;
+                font-weight: 600;
+                padding: 6px 14px;
+                border-radius: 20px;
+                box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-size: 0.85rem;
+            }
+            .detalles-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+                background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            }
+            .detalles-btn:active {
+                transform: translateY(0);
+            }
+            .detalles-content {
+                display: none;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                animation: fadeIn 0.3s ease;
+            }
+            .detalles-content.show {
+                display: block;
+            }
+            .detalles-content h6 {
+                color: #FFD700 !important;
+                font-weight: 500;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
     </head>
     <body class="color-category">
         <header class="bg-danger text-white text-center py-4">
@@ -20,10 +62,17 @@
                 <div class="row">
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="huevos revueltos" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🍳</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Huevos revueltos $12,000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     </div>
                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20unos%20huevos%20revueltos." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -31,10 +80,17 @@
 
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="huevos con aliños" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🍳</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Huevos con aliños $13,000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     </div>
                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20unos%20huevos%20aliñados." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -42,10 +98,17 @@
 
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="huevos rancheros" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🍳</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Huevos rancheros $14.000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     </div>
                        <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20unos%20huevos%20rancheros." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -53,10 +116,17 @@
 
                     <div class="col-md-6 mb-4">
                     <div class="bg-dark card h-100">
-                     <img src="./imagenes/Imagen-no-disponible.gif" alt="huevos con jamón" class="card-img-top menu-img">
+                    <div class="card-placeholder">
+                        <span class="card-placeholder-icon">🍳</span>
+                    </div>
                     <div class="card-body">
                      <h5 class="card-title text-center text-light">Huevos con jamón $14,000</h5>
-                     <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     <div class="text-center mb-2">
+                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                     </div>
+                     <div class="detalles-content">
+                        <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                     </div>
                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20unos%20huevos%20con%20jamón." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                     </div>
                     </div>
@@ -64,10 +134,17 @@
 
                     <div class="col-md-6 mb-4">
                         <div class="bg-dark card h-100">
-                         <img src="./imagenes/Imagen-no-disponible.gif" alt="huevos con carne desmechada" class="card-img-top menu-img">
+                        <div class="card-placeholder">
+                            <span class="card-placeholder-icon">🍳</span>
+                        </div>
                         <div class="card-body">
                          <h5 class="card-title text-center text-light">Huevos con carne desmechada $14.000</h5>
-                         <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                         <div class="text-center mb-2">
+                            <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                         </div>
+                         <div class="detalles-content">
+                            <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                         </div>
                          <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20unos%20huevos%20con%20carne%20desmechada." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                         </div>
                         </div>
@@ -75,10 +152,17 @@
 
                         <div class="col-md-6 mb-4">
                             <div class="bg-dark card h-100">
-                             <img src="./imagenes/Imagen-no-disponible.gif" alt="huevos con chorizo" class="card-img-top menu-img">
+                            <div class="card-placeholder">
+                                <span class="card-placeholder-icon">🍳</span>
+                            </div>
                             <div class="card-body">
                              <h5 class="card-title text-center text-light">Huevos con chorizo $13,000</h5>
-                             <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                             <div class="text-center mb-2">
+                                <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                             </div>
+                             <div class="detalles-content">
+                                <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                             </div>
                              <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20unos%20huevos%20con%20chorizo." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                             </div>
                             </div>
@@ -89,7 +173,12 @@
                                  <img src="./imagenes/Platos/higado-encebollado.jpeg" alt="hígado" class="card-img-top menu-img">
                                 <div class="card-body">
                                  <h5 class="card-title text-center text-light">Hígado encebollado o en bistec $14,000</h5>
-                                 <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                                 <div class="text-center mb-2">
+                                    <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                 </div>
+                                 <div class="detalles-content">
+                                    <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                                 </div>
                                  <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20hígado..." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                 </div>
                                 </div>
@@ -97,10 +186,17 @@
 
                                 <div class="col-md-6 mb-4">
                                     <div class="bg-dark card h-100">
-                                     <img src="./imagenes/Imagen-no-disponible.gif" alt="calentao con res o cerdo" class="card-img-top menu-img">
+                                    <div class="card-placeholder">
+                                        <span class="card-placeholder-icon">🍛</span>
+                                    </div>
                                     <div class="card-body">
                                      <h5 class="card-title text-center text-light">Calentao con res o cerdo $15,000</h5>
-                                     <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                                     <div class="text-center mb-2">
+                                        <button class="btn detalles-btn" onclick="toggleDetalles(this)">Ver Detalles</button>
+                                     </div>
+                                     <div class="detalles-content">
+                                        <h6 class="card-title text-center text-light">Acompañado con arepa o patacón, café con leche, chocolate o guarapo</h6>
+                                     </div>
                                      <a href="https://wa.me/+573147151987?text=Hola,%20quiero%20un%20calentao%20con..." class="btn btn-success w-100 mt-2" target="_blank">Pedir por WhatsApp domicilio</a>
                                     </div>
                                     </div>
@@ -115,5 +211,25 @@
             <br>Emil Jiménez - Desarrollador web 
             </p>
         </footer>
+        <script>
+            function toggleDetalles(button) {
+                const buttonContainer = button.parentElement;
+                const detallesContent = buttonContainer.nextElementSibling;
+                
+                if (!detallesContent || !detallesContent.classList.contains('detalles-content')) {
+                    return;
+                }
+                
+                const isVisible = detallesContent.classList.contains('show');
+                
+                if (isVisible) {
+                    detallesContent.classList.remove('show');
+                    button.textContent = 'Ver Detalles';
+                } else {
+                    detallesContent.classList.add('show');
+                    button.textContent = 'Ocultar Detalles';
+                }
+            }
+        </script>
     </body>
 </html>
